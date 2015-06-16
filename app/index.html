@@ -1,0 +1,54 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>molotov</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+
+  </head>
+  <body>
+
+    <div class="scroll">
+      <img src="http://svite-league-apps-content.s3.amazonaws.com/bgimages/field-stripes.jpg">
+      <img src="http://svite-league-apps-content.s3.amazonaws.com/bgimages/field-stripes.jpg">
+    </div>
+
+    <svg height="0">
+    <defs>
+      <radialGradient id="gradient" cx="50%" cy="50%" r="50%">
+        <stop stop-color="white" offset="0%"/>
+        <stop stop-color="black" offset="100%"/>
+      </radialGradient>
+
+      <mask id="masking" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+        <circle cx=".5" cy=".5" r=".5" fill="url(#gradient)" />
+      </mask>
+    </defs>
+    </svg>
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

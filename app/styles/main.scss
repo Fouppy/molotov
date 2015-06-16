@@ -1,0 +1,71 @@
+// bower:css
+@import "normalize.css/normalize.css";
+// endbower
+
+$haloWidth: 50%;
+$haloHeight: 50%;
+$backgroundColor: #000;
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: $backgroundColor;
+  position: relative;
+  min-height: 100%;
+
+  .scroll {
+    position: absolute;
+    overflow: hidden;
+
+    top: calc((100% - #{$haloHeight}) / 2);
+    right: calc((100% - #{$haloWidth}) / 2);
+    bottom: calc((100% - #{$haloHeight}) / 2);
+    left: calc((100% - #{$haloWidth}) / 2);
+    
+    -webkit-mask: radial-gradient(closest-side at center, $backgroundColor, transparent);
+    mask: url('#masking');
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 0;
+
+    transform: translate3d(0,0,0);
+
+    &:first-child {
+      animation: animatedImage1 20s linear infinite;
+    }
+
+    &:nth-child(2) {
+      animation: animatedImage2 20s linear infinite;
+    }
+  }
+}
+
+.no-cssmasks .scroll {
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: url(http://egztudio.com/molotov/mask.png) 0 0;
+    background-size: 100% 100%;
+  }
+}
+
+@keyframes animatedImage1 {
+  from { left: 0; }
+  to { left: 100%; }
+}
+
+@keyframes animatedImage2 {
+  from { left: -100%; }
+  to { left: 0%; }
+}
